@@ -159,7 +159,7 @@ const clearValidation = ({
 };
 
 
-const EnableValidation = ({
+const enableValidation = ({
     formSelector,
     inputSelector,
     submitButtonSelector,
@@ -169,7 +169,7 @@ const EnableValidation = ({
 }) => {
     const formList = document.querySelectorAll(formSelector);
 
-    formList,forEach((formElement) => {
+    formList.forEach((formElement) => {
         formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
         });
@@ -185,4 +185,4 @@ const EnableValidation = ({
 };
 
 
-export { EnableValidation, clearValidation };
+export { enableValidation, clearValidation };
