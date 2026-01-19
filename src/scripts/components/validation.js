@@ -173,3 +173,10 @@ export const enableValidation = ({
     });
   });
 };
+
+export const clearValidationSimple = (formElement, settings) => {
+  clearValidation({
+    formElement,
+    ...settings
+  });
+};
