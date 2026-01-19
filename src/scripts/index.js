@@ -8,7 +8,7 @@
 
 import { createCardElement, deleteCard, likeCard } from "./components/card.js";
 import { openModalWindow, closeModalWindow, setCloseModalWindowEventListeners } from "./components/modal.js";
-import { enableValidation, clearValidation } from "./components/validation.js";
+import { enableValidation, clearValidation as clearValidationSimple, clearValidationSimple } from "./components/validation.js";
 import {
   getUserInfo,
   getCardList,
@@ -152,7 +152,7 @@ const handleCardFormSubmit = (evt) => {
       placesWrap.prepend(cardElement);
       closeModalWindow(cardFormModalWindow);
       cardForm.reset();
-      clearValidation(cardForm, validationSettings);
+      clearValidationSimple(cardForm, validationSettings);
     })
     .catch((err) => {
       console.log(err);
@@ -184,19 +184,19 @@ if (deleteConfirmForm) {
 openProfileFormButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  clearValidation(profileForm, validationSettings);
+  clearValidationSimple(profileForm, validationSettings);
   openModalWindow(profileFormModalWindow);
 });
 
 profileAvatar.addEventListener("click", () => {
   avatarForm.reset();
-  clearValidation(avatarForm, validationSettings);
+  clearValidationSimple(avatarForm, validationSettings);
   openModalWindow(avatarFormModalWindow);
 });
 
 openCardFormButton.addEventListener("click", () => {
   cardForm.reset();
-  clearValidation(cardForm, validationSettings);
+  clearValidationSimple(cardForm, validationSettings);
   openModalWindow(cardFormModalWindow);
 });
 
