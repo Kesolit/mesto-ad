@@ -42,13 +42,13 @@ export const updateProfileAvatar = (avatarUrl) => {
 };
 
 // Создание новой карточки
-export const createCard = ({ title, imageUrl }) => {
+export const createCard = ({ name, link }) => {
   return fetch(`${config.baseUrl}/cards`, {
     method: "POST",
     headers: config.headers,
     body: JSON.stringify({ 
-      name: title, 
-      link: imageUrl 
+      name,
+      link
     }),
   }).then(getResponseData);
 };
