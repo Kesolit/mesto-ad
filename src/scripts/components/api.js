@@ -23,7 +23,6 @@ export const getCardList = () => {
   }).then(getResponseData);
 };
 
-// Обновление профиля (имени и описания)
 export const updateProfileInfo = ({ name, about }) => {
   return fetch(`${config.baseUrl}/users/me`, {
     method: "PATCH",
@@ -32,7 +31,6 @@ export const updateProfileInfo = ({ name, about }) => {
   }).then(getResponseData);
 };
 
-// Обновление аватара пользователя
 export const updateProfileAvatar = (avatarUrl) => {
   return fetch(`${config.baseUrl}/users/me/avatar`, {
     method: "PATCH",
@@ -41,7 +39,6 @@ export const updateProfileAvatar = (avatarUrl) => {
   }).then(getResponseData);
 };
 
-// Создание новой карточки
 export const createCard = ({ name, link }) => {
   return fetch(`${config.baseUrl}/cards`, {
     method: "POST",
@@ -53,7 +50,6 @@ export const createCard = ({ name, link }) => {
   }).then(getResponseData);
 };
 
-// Удаление карточки
 export const removeCard = (cardId) => {
   return fetch(`${config.baseUrl}/cards/${cardId}`, {
     method: "DELETE",
@@ -61,7 +57,6 @@ export const removeCard = (cardId) => {
   }).then(getResponseData);
 };
 
-// Изменение статуса лайка карточки
 export const toggleCardLike = (cardId, isCurrentlyLiked) => {
   return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
     method: isCurrentlyLiked ? "DELETE" : "PUT",
